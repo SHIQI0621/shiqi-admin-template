@@ -1,0 +1,7 @@
+import{Ai as e,Hi as t,Hr as n,Ki as r,Qr as i,Sn as a,Xi as o,fi as s,in as c,o as l,on as u,pi as d,ri as f,s as p,zt as m}from"./use-global-config-CDAW_LBi.js";var h=({from:t,replacement:n,scope:r,version:i,ref:s,type:c=`API`},l)=>{e(()=>o(l),e=>{e&&a(r,`[${c}] ${t} is about to be deprecated in version ${i}, please use ${n} instead.
+For more detail, please visit: ${s}
+`)},{immediate:!0})},g={prefix:Math.floor(Math.random()*1e4),current:0},_=Symbol(`elIdInjection`),v=()=>i()?f(_,g):g,y=e=>{let t=v();!u&&t===g&&a(`IdInjection`,`Looks like you are using server rendering, you must provide a id provider to ensure the hydration process to be succeed
+usage: app.provide(ID_INJECTION_KEY, {
+  prefix: number,
+  current: number,
+})`);let n=m();return c(()=>o(e)||`${n.value}-id-${t.prefix}-${t.current++}`)},b=()=>({form:f(l,void 0),formItem:f(p,void 0)}),x=(a,{formItemContext:o,disableIdGeneration:c,disableIdManagement:l})=>{c||=t(!1),l||=t(!1);let u=i(),f=()=>{let e=u?.parent;for(;e;){if(e.type.name===`ElFormItem`)return!1;if(e.type.name===`ElLabelWrap`)return!0;e=e.parent}return!1},p=t(),m,h=n(()=>!!(!(a.label||a.ariaLabel)&&o&&o.inputIds&&o.inputIds?.length<=1));return s(()=>{m=e([r(a,`id`),c],([e,t])=>{let n=e??(t?void 0:y().value);n!==p.value&&(o?.removeInputId&&!f()&&(p.value&&o.removeInputId(p.value),!l?.value&&!t&&n&&o.addInputId(n)),p.value=n)},{immediate:!0})}),d(()=>{m&&m(),o?.removeInputId&&p.value&&o.removeInputId(p.value)}),{isLabeledByFormItem:h,inputId:p}};export{h as a,v as i,x as n,y as r,b as t};
