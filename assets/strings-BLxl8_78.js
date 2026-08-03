@@ -1,0 +1,1 @@
+import{$i as e}from"./use-global-config-CDAW_LBi.js";var t=(e=``)=>e.replace(/[|\\{}()[\]^$+*?.]/g,`\\$&`).replace(/-/g,`\\x2d`),n=t=>e(t);export{t as n,n as t};

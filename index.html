@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      /* 1. 容器与背景 */
+      .aurora-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #050505; /* 深邃的暗色背景 */
+        overflow: hidden;
+        z-index: 9999;
+      }
+
+      /* 2. 极光光晕动画 */
+      .aurora-bg {
+        position: absolute;
+        width: 150%;
+        height: 150%;
+        background: conic-gradient(
+          from 0deg,
+          transparent,
+          #00f2fe,
+          #4facfe,
+          #7f00ff,
+          transparent
+        );
+        animation: rotateAurora 6s linear infinite;
+        filter: blur(80px); /* 极度模糊产生光晕 */
+        opacity: 0.6;
+      }
+      .title {
+        padding: 10px 0;
+        font-size: 20px;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .logo{
+        width: 100px;
+        object-fit: cover;
+        height: 100px;
+      }
+      /* 3. 玻璃拟态卡片 */
+      .glass-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.05); /* 半透明底色 */
+        backdrop-filter: blur(15px); /* 核心：毛玻璃效果 */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        z-index: 1; /* 确保在光晕之上 */
+      }
+
+      /* 4. 内部流光进度条 */
+      .glass-loader {
+        width: 120px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 16px;
+      }
+      .glass-loader::after {
+        content: "";
+        display: block;
+        width: 40%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, #fff, transparent);
+        border-radius: 4px;
+        animation: slide 1.5s ease-in-out infinite;
+      }
+
+      /* 5. 文字样式 */
+      .loading-text {
+        color: rgba(255, 255, 255, 0.8);
+        font-family: system-ui, sans-serif;
+        font-size: 14px;
+        letter-spacing: 2px;
+        margin: 0;
+      }
+
+      /* 关键帧动画 */
+      @keyframes rotateAurora {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes slide {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(350%);
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/index-BMjY-VJY.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/use-global-config-CDAW_LBi.js">
+    <link rel="modulepreload" crossorigin href="./assets/runtime-dom.esm-bundler-CoLRWixr.js">
+    <link rel="modulepreload" crossorigin href="./assets/cache-BudSZTp1.js">
+    <link rel="modulepreload" crossorigin href="./assets/theme-CZHczQXW.js">
+    <link rel="modulepreload" crossorigin href="./assets/use-aria-DJS_sFNh.js">
+    <link rel="modulepreload" crossorigin href="./assets/event-BwMBYGyk.js">
+    <link rel="modulepreload" crossorigin href="./assets/_baseClone-ByqmRbDM.js">
+    <link rel="modulepreload" crossorigin href="./assets/use-form-item-D1S1Rdhm.js">
+    <link rel="modulepreload" crossorigin href="./assets/checkbox-DEuoh1cK.js">
+    <link rel="modulepreload" crossorigin href="./assets/toNumber-CjgjEnw3.js">
+    <link rel="modulepreload" crossorigin href="./assets/scrollbar-i4dm08U4.js">
+    <link rel="modulepreload" crossorigin href="./assets/focus-trap-CQAyxqvY.js">
+    <link rel="modulepreload" crossorigin href="./assets/tooltip-BNiXizz0.js">
+    <link rel="modulepreload" crossorigin href="./assets/use-attrs-85zqC8Cr.js">
+    <link rel="modulepreload" crossorigin href="./assets/icon-DbffPcQ6.js">
+    <link rel="modulepreload" crossorigin href="./assets/typescript-DOc6skV4.js">
+    <link rel="modulepreload" crossorigin href="./assets/input-DAPRTTr7.js">
+    <link rel="modulepreload" crossorigin href="./assets/button-CNWcJD6Z.js">
+    <link rel="modulepreload" crossorigin href="./assets/click-outside-CNd9kE09.js">
+    <link rel="modulepreload" crossorigin href="./assets/repeat-click-BuIBKJbk.js">
+    <link rel="modulepreload" crossorigin href="./assets/date-picker-CPfGO78M.js">
+    <link rel="modulepreload" crossorigin href="./assets/vnode-Docb3AgK.js">
+    <link rel="modulepreload" crossorigin href="./assets/descriptions-B8_iqXtV.js">
+    <link rel="modulepreload" crossorigin href="./assets/table-CMSiBFgD.js">
+    <link rel="modulepreload" crossorigin href="./assets/clamp-B7GdGDwJ.js">
+    <link rel="modulepreload" crossorigin href="./assets/strings-BLxl8_78.js">
+    <link rel="modulepreload" crossorigin href="./assets/scroll-CltsrG_Y.js">
+    <link rel="modulepreload" crossorigin href="./assets/tag-1PfAuR1Q.js">
+    <link rel="modulepreload" crossorigin href="./assets/select-C1D5bJ29.js">
+    <link rel="modulepreload" crossorigin href="./assets/cloneDeep-BEYZDFio.js">
+    <link rel="modulepreload" crossorigin href="./assets/use-lockscreen-1CfiD568.js">
+    <link rel="modulepreload" crossorigin href="./assets/image-viewer-C153a270.js">
+    <link rel="modulepreload" crossorigin href="./assets/position-Dp-Yfcsh.js">
+    <link rel="modulepreload" crossorigin href="./assets/tabs-BeNsrnhD.js">
+    <link rel="modulepreload" crossorigin href="./assets/alert-B8-4ynnL.js">
+    <link rel="modulepreload" crossorigin href="./assets/form-D8i-N1rm.js">
+    <link rel="modulepreload" crossorigin href="./assets/avatar-Df2WGchH.js">
+    <link rel="modulepreload" crossorigin href="./assets/message-4aFkqDJu.js">
+    <link rel="modulepreload" crossorigin href="./assets/overlay-D4ZthmY_.js">
+    <link rel="modulepreload" crossorigin href="./assets/collapse-transition-l-YA5OOT.js">
+    <link rel="modulepreload" crossorigin href="./assets/refs-B48e3YKW.js">
+    <link rel="modulepreload" crossorigin href="./assets/menu-DPK4eF9-.js">
+    <link rel="modulepreload" crossorigin href="./assets/validator-C131mnEr.js">
+    <link rel="modulepreload" crossorigin href="./assets/message-box-CJ-vS6Qr.js">
+    <link rel="modulepreload" crossorigin href="./assets/card-B1zCWpgi.js">
+    <link rel="modulepreload" crossorigin href="./assets/radio-DEd4ybwC.js">
+    <link rel="modulepreload" crossorigin href="./assets/col-CbPwT7pv.js">
+    <link rel="modulepreload" crossorigin href="./assets/collapse-CzjpLNDh.js">
+    <link rel="modulepreload" crossorigin href="./assets/color-picker-DXvF3JPR.js">
+    <link rel="modulepreload" crossorigin href="./assets/dialog-6cYL4vRy.js">
+    <link rel="modulepreload" crossorigin href="./assets/divider-DHtnX0TS.js">
+    <link rel="modulepreload" crossorigin href="./assets/dropdown-hdjcgrGK.js">
+    <link rel="modulepreload" crossorigin href="./assets/empty-CkzbLFHp.js">
+    <link rel="modulepreload" crossorigin href="./assets/image-DARlykdZ.js">
+    <link rel="modulepreload" crossorigin href="./assets/input-number-BIyZxgQo.js">
+    <link rel="modulepreload" crossorigin href="./assets/link-BoK9MSNl.js">
+    <link rel="modulepreload" crossorigin href="./assets/pagination-BA6WTFk4.js">
+    <link rel="modulepreload" crossorigin href="./assets/progress-WH0Z7FDv.js">
+    <link rel="modulepreload" crossorigin href="./assets/slider-DWgrdZcG.js">
+    <link rel="modulepreload" crossorigin href="./assets/switch-DKWyQQWw.js">
+    <link rel="modulepreload" crossorigin href="./assets/tree-rCeDb3ii.js">
+    <link rel="modulepreload" crossorigin href="./assets/timeline-DPUBzu-g.js">
+    <link rel="modulepreload" crossorigin href="./assets/tree-select-B2lCPnbU.js">
+    <link rel="modulepreload" crossorigin href="./assets/upload-DgfrbLM6.js">
+    <link rel="modulepreload" crossorigin href="./assets/directive-DJoK7I9-.js">
+    <link rel="modulepreload" crossorigin href="./assets/vue-router-Db8GjiNu.js">
+    <link rel="modulepreload" crossorigin href="./assets/request-Bw83HS8B.js">
+    <link rel="modulepreload" crossorigin href="./assets/stores-Bn_2oSU7.js">
+    <link rel="stylesheet" crossorigin href="./assets/stores-1oWo33m3.css">
+    <link rel="stylesheet" crossorigin href="./assets/index-Dbu1XpXQ.css">
+  </head>
+  <body>
+    <div id="app">
+      <!-- 极光流光首屏加载动画 -->
+      <div class="aurora-loader">
+        <!-- 背景光晕层 -->
+        <div class="aurora-bg"></div>
+        <!-- 玻璃拟态加载框 -->
+        <div class="glass-card">
+          <img class="logo" src="./logo.png" alt="">
+          <div class="title">SHIQI ADMIN TEMPLATE</div>
+          <div class="glass-loader"></div>
+          <p class="loading-text">Loading...</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
