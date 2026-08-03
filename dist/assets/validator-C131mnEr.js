@@ -1,1 +1,0 @@
-import{jr as e}from"./use-global-config-CDAW_LBi.js";var t=t=>[``,...e].includes(t);export{t};
