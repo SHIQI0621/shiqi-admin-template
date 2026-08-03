@@ -1,0 +1,5 @@
+import _sfc_main from "./Upload2.vue.mjs";
+import "./Upload2.vue2.mjs";
+export {
+  _sfc_main as default
+};

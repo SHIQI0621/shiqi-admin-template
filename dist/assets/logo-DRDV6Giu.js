@@ -1,0 +1,1 @@
+var e=`/shiqi-admin-template/assets/logo-CJBNYAxv.png`;export{e as t};

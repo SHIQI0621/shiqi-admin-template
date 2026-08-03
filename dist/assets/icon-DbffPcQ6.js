@@ -1,0 +1,1 @@
+import{C as e,Dt as t,E as n,En as r,H as i,W as a,_t as o,w as s,x as c}from"./use-global-config-CDAW_LBi.js";var l=r([String,Object,Function]),u={Close:n},d={Close:n,SuccessFilled:o,InfoFilled:i,WarningFilled:t,CircleCloseFilled:s},f={primary:i,success:o,warning:t,error:s,info:i},p={validating:a,success:c,error:e};export{l as a,p as i,d as n,f as r,u as t};

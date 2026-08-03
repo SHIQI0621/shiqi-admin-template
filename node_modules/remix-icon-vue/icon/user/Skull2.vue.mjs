@@ -1,0 +1,58 @@
+import { defineComponent, reactive, openBlock, createBlock, createVNode } from "vue";
+import { Props } from "../props.mjs";
+import isNumber from "../../utils/isNumber.mjs";
+const _sfc_main = /* @__PURE__ */ defineComponent({
+  __name: "Skull2",
+  props: Props,
+  setup(__props) {
+    const props = __props;
+    const iconStyle = reactive({
+      "--icon-size": "",
+      "--icon-color": ""
+    });
+    const iconSize = isNumber(props.size) ? `${props.size}px` : props.size;
+    const iconColor = props.color || "";
+    iconStyle["--icon-size"] = iconSize;
+    iconStyle["--icon-color"] = iconColor;
+    const RemixSkull2 = () => {
+      if (props.fill) {
+        return createVNode("i", {
+          "class": ["remix-icon", {
+            "remix-icon--spin": props.spin
+          }],
+          "style": iconStyle
+        }, [createVNode("svg", {
+          "xmlns": "http://www.w3.org/2000/svg",
+          "viewBox": "0 0 24 24"
+        }, [createVNode("g", null, [createVNode("path", {
+          "fill": "none",
+          "d": "M0 0h24v24H0z"
+        }, null), createVNode("path", {
+          "d": "M12 2c5.523 0 10 4.477 10 10v3.764a2 2 0 0 1-1.106 1.789L18 19v1a3 3 0 0 1-2.824 2.995L14.95 23a2.5 2.5 0 0 0 .044-.33L15 22.5V22a2 2 0 0 0-1.85-1.995L13 20h-2a2 2 0 0 0-1.995 1.85L9 22v.5c0 .171.017.339.05.5H9a3 3 0 0 1-3-3v-1l-2.894-1.447A2 2 0 0 1 2 15.763V12C2 6.477 6.477 2 12 2zm-4 9a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"
+        }, null)])])]);
+      } else {
+        return createVNode("i", {
+          "class": ["remix-icon", {
+            "remix-icon--spin": props.spin
+          }],
+          "style": iconStyle
+        }, [createVNode("svg", {
+          "xmlns": "http://www.w3.org/2000/svg",
+          "viewBox": "0 0 24 24"
+        }, [createVNode("g", null, [createVNode("path", {
+          "fill": "none",
+          "d": "M0 0h24v24H0z"
+        }, null), createVNode("path", {
+          "fill-rule": "nonzero",
+          "d": "M12 2c5.523 0 10 4.477 10 10v3.764a2 2 0 0 1-1.106 1.789L18 19v1a3 3 0 0 1-2.824 2.995L14.95 23a2.5 2.5 0 0 0 .044-.33L15 22.5V22a2 2 0 0 0-1.85-1.995L13 20h-2a2 2 0 0 0-1.995 1.85L9 22v.5c0 .171.017.339.05.5H9a3 3 0 0 1-3-3v-1l-2.894-1.447A2 2 0 0 1 2 15.763V12C2 6.477 6.477 2 12 2zm0 2a8 8 0 0 0-7.996 7.75L4 12v3.764l4 2v1.591l.075-.084a3.992 3.992 0 0 1 2.723-1.266L11 18l2.073.001.223.01c.999.074 1.89.51 2.55 1.177l.154.167v-1.591l4-2V12a8 8 0 0 0-8-8zm-4 7a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm8 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"
+        }, null)])])]);
+      }
+    };
+    return (_ctx, _cache) => {
+      return openBlock(), createBlock(RemixSkull2);
+    };
+  }
+});
+export {
+  _sfc_main as default
+};

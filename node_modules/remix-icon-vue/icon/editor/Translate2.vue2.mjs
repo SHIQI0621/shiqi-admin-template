@@ -1,0 +1,4 @@
+const Translate2_vue_vue_type_style_index_0_lang = "";
+export {
+  Translate2_vue_vue_type_style_index_0_lang as default
+};

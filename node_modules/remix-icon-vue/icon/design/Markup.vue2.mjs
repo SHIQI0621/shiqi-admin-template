@@ -1,0 +1,4 @@
+const Markup_vue_vue_type_style_index_0_lang = "";
+export {
+  Markup_vue_vue_type_style_index_0_lang as default
+};
