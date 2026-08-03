@@ -7,7 +7,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import path from 'path'
 
 export default defineConfig({
-  base: '/',
+  base: process.env.NODE_ENV === 'production' ? '/你的仓库名/' : './',
   plugins: [
     vue(),
     // 自动导入 API（Vue、VueRouter、Pinia 等）
