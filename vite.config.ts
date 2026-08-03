@@ -7,7 +7,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import path from 'path'
 
 export default defineConfig({
-  base: './',
+  base: '/shiqi-admin-template/',
   plugins: [
     vue(),
     // 自动导入 API（Vue、VueRouter、Pinia 等）
