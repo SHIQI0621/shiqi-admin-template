@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      /* 1. 容器与背景 */
+      .aurora-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #050505; /* 深邃的暗色背景 */
+        overflow: hidden;
+        z-index: 9999;
+      }
+
+      /* 2. 极光光晕动画 */
+      .aurora-bg {
+        position: absolute;
+        width: 150%;
+        height: 150%;
+        background: conic-gradient(
+          from 0deg,
+          transparent,
+          #00f2fe,
+          #4facfe,
+          #7f00ff,
+          transparent
+        );
+        animation: rotateAurora 6s linear infinite;
+        filter: blur(80px); /* 极度模糊产生光晕 */
+        opacity: 0.6;
+      }
+      .title {
+        padding: 10px 0;
+        font-size: 20px;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .logo{
+        width: 100px;
+        object-fit: cover;
+        height: 100px;
+      }
+      /* 3. 玻璃拟态卡片 */
+      .glass-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.05); /* 半透明底色 */
+        backdrop-filter: blur(15px); /* 核心：毛玻璃效果 */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        z-index: 1; /* 确保在光晕之上 */
+      }
+
+      /* 4. 内部流光进度条 */
+      .glass-loader {
+        width: 120px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+        margin-bottom: 16px;
+      }
+      .glass-loader::after {
+        content: "";
+        display: block;
+        width: 40%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, #fff, transparent);
+        border-radius: 4px;
+        animation: slide 1.5s ease-in-out infinite;
+      }
+
+      /* 5. 文字样式 */
+      .loading-text {
+        color: rgba(255, 255, 255, 0.8);
+        font-family: system-ui, sans-serif;
+        font-size: 14px;
+        letter-spacing: 2px;
+        margin: 0;
+      }
+
+      /* 关键帧动画 */
+      @keyframes rotateAurora {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes slide {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(350%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 极光流光首屏加载动画 -->
+      <div class="aurora-loader">
+        <!-- 背景光晕层 -->
+        <div class="aurora-bg"></div>
+        <!-- 玻璃拟态加载框 -->
+        <div class="glass-card">
+          <img class="logo" src="./logo.png" alt="">
+          <div class="title">SHIQI ADMIN TEMPLATE</div>
+          <div class="glass-loader"></div>
+          <p class="loading-text">Loading...</p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
