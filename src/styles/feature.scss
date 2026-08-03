@@ -1,0 +1,228 @@
+// ============================================
+// 功能组件演示页公共骨架样式
+// 供 src/views/feature/* 下各演示页统一复用
+// 颜色统一使用 Element Plus CSS 变量
+// ============================================
+
+// ---------- 卡片间距(文档页各板块) ----------
+.intro-card,
+.preview-card,
+.usage-card,
+.props-card,
+.events-card,
+.slot-card,
+.slots-card,
+.config-card,
+.list-card,
+.tooltip-config-card,
+.app-preview-card {
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// ---------- 卡片头部 ----------
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  .header-title {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+// ---------- 介绍区 ----------
+.intro-section {
+  .intro-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .intro-text {
+    line-height: 1.8;
+    color: var(--el-text-color-regular);
+    margin-bottom: 16px;
+  }
+
+  // 灰底提示块
+  .intro-tips {
+    background-color: var(--el-fill-color-lighter);
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+
+    p {
+      line-height: 1.8;
+    }
+  }
+
+  // 蓝色左边框「独立使用」说明块
+  .intro-usage {
+    background-color: var(--el-color-primary-light-9);
+    padding: 16px;
+    border-radius: 8px;
+    border-left: 4px solid var(--el-color-primary);
+
+    .usage-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    p {
+      line-height: 1.6;
+
+      .code-inline {
+        background-color: var(--el-bg-color);
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: "Fira Code", "Courier New", monospace;
+        color: var(--el-color-primary);
+      }
+
+      a {
+        color: var(--el-color-primary);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// ---------- 效果预览区 ----------
+.preview-section {
+  display: grid;
+  // 横着排4个
+  grid-template-columns: repeat(auto-fill, 1fr);
+  // 网格间距
+  gap: 16px;
+  .preview-section-item {
+    .section-title {
+      font-size: 14px;
+      font-weight: 500;
+      margin: 16px 0 12px;
+      color: var(--el-text-color-primary);
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    .preview-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+  }
+}
+
+// 单段演示:小标题 + 说明 + 灰底预览盒(hook/单卡页面通用)
+.demo-section {
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  h3 {
+    margin: 0 0 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--el-text-color-primary);
+  }
+}
+
+.demo-desc {
+  margin: 0 0 16px;
+  color: var(--el-text-color-secondary);
+  font-size: 13px;
+}
+
+// 灰底预览盒
+.demo-box {
+  padding: 16px;
+  background: var(--el-fill-color-lighter);
+  border-radius: 8px;
+}
+
+// ---------- 基础用法区 ----------
+.usage-section {
+  .usage-subtitle {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 20px 0 12px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+// ---------- 代码块(纯文本,无语法高亮) ----------
+// 统一写法:<pre class="code-block"><code>…HTML 转义内容…</code></pre>
+// 或 hook 页面用 <div class="code-block"><pre v-pre>…</pre></div>
+.code-block {
+  background-color: var(--el-fill-color-lighter);
+  padding: 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 0;
+
+  code,
+  pre {
+    margin: 0;
+    font-family: "Fira Code", "Courier New", monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--el-text-color-primary);
+    white-space: pre;
+  }
+
+  pre {
+    background: transparent;
+    padding: 0;
+  }
+}
+
+// ---------- API 表格统一约定 ----------
+.api-table {
+  width: 100%;
+
+  // 表头底色由各页面通过 :header-cell-style 透传,
+  // 此处仅保留通用样式钩子
+}
+
+// ---------- 实际应用预览区 ----------
+.app-examples {
+  .example-title {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 20px 0 12px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .example-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    background-color: var(--el-fill-color-lighter);
+    border-radius: 8px;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
